@@ -46,9 +46,9 @@ class User extends Authenticatable
     ];
 
     /**
-     
+    
      */
-    final public function getUserByEmailOrPhone(array $input):Builder|Model|null
+    final public function getUserByEmailOrPhone(array $input)
      {
         return self::query()->where('email' , $input['email'])
         ->orWhere('phone' , $input['email'])
