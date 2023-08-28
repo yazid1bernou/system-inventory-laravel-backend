@@ -27,4 +27,9 @@ class AuthController extends Controller
               'email' => ['the provider credencial Incorrect '] 
             ]);
          }
+
+         final public function logout() {
+            auth()->user()->tokens()->delete();
+            return response()->json(['msg' => 'You have Successufully Logged out !']);
+         }
 }
